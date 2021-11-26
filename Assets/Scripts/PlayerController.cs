@@ -1,6 +1,7 @@
+using Unity.Mathematics;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     [Header("Weapons")]
     [SerializeField] private Weapon currentWeapon;
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("Tank Stats")]
     [SerializeField] private int speed;
     [SerializeField] private int rotationSpeed;
+    [SerializeField] private float health;
 
     private void Start()
     {
@@ -59,8 +61,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.up * speed * Time.deltaTime;
-            print("Forward");
-            print(speed);
         }
     }
 
@@ -80,12 +80,27 @@ public class PlayerController : MonoBehaviour
     private void CheckBorders()
     {
         Vector3 pos = transform.position;
-        
+
         if (pos.x > 7.85f) pos.x = 7.85f;
         if (pos.x < -7.85f) pos.x = -7.85f;
 
         if (pos.y > 4.5f) pos.y = 4.5f;
         if (pos.y < -4.5f) pos.y = -4.5f;
         transform.position = pos;
+    }
+
+    private void Respawn()
+    {
+        Instantiate(gameObject, new Vector3(0, 0, 0), quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        if (health <= 0)
+        {
+            Respawn();
+        }
     }
 }
