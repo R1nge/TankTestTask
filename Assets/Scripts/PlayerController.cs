@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -24,6 +23,7 @@ public class PlayerController : MonoBehaviour
         SwapWeapons();
         Move();
         Rotate();
+        CheckBorders();
     }
 
     private void Shoot()
@@ -75,5 +75,17 @@ public class PlayerController : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 0, -rotationSpeed * Time.deltaTime));
         }
+    }
+
+    private void CheckBorders()
+    {
+        Vector3 pos = transform.position;
+        
+        if (pos.x > 7.85f) pos.x = 7.85f;
+        if (pos.x < -7.85f) pos.x = -7.85f;
+
+        if (pos.y > 4.5f) pos.y = 4.5f;
+        if (pos.y < -4.5f) pos.y = -4.5f;
+        transform.position = pos;
     }
 }
