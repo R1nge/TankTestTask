@@ -3,7 +3,6 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     public int damage;
-    public int fireRate;
     public Transform shootPoint;
     public Rigidbody2D projectilePrefab;
     public int projectileSpeed;
