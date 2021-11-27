@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private int speed;
     [SerializeField] private int rotationSpeed;
     [SerializeField] private float health;
+    [SerializeField] private float takenDamageMultiplier;
 
     private void Start()
     {
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= amount * takenDamageMultiplier;
         if (health <= 0)
         {
             Respawn();

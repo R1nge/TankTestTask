@@ -101,10 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  protection: 10
-  speed: 0
+  takenDamageMultiplier: 1
+  speed: 2
   damage: 10
   aiDestinationSetter: {fileID: 0}
+  aiPath: {fileID: 0}
 --- !u!61 &4229271629835925640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.5
+  radius: 0.75
   height: 2
   canMove: 1
   maxSpeed: 3

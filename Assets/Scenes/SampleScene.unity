@@ -1146,7 +1146,8 @@ MonoBehaviour:
   - {fileID: 925094915}
   speed: 5
   rotationSpeed: 150
-  health: 0
+  health: 10
+  takenDamageMultiplier: 1
 --- !u!61 &1386550355
 BoxCollider2D:
   m_ObjectHideFlags: 0

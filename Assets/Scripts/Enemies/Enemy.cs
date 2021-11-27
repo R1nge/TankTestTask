@@ -5,19 +5,23 @@ using UnityEngine.AI;
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
     public float health;
-    public float protection;
+    public float takenDamageMultiplier;
     public float speed;
     public float damage;
     public AIDestinationSetter aiDestinationSetter;
+    public AIPath aiPath;
 
     private void Awake()
     {
         aiDestinationSetter = GetComponent<AIDestinationSetter>();
+        aiPath = GetComponent<AIPath>();
+
+        aiPath.maxSpeed = speed;
     }
 
     public void TakeDamage(float amount)
     {
-        health -= amount * protection;
+        health -= amount * takenDamageMultiplier;
         if (health <= 0)
         {
             OnDeath();
