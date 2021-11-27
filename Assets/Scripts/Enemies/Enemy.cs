@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Pathfinding;
+using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Enemy : MonoBehaviour, IDamageable
 {
@@ -6,6 +8,12 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public float protection;
     public float speed;
     public float damage;
+    public AIDestinationSetter aiDestinationSetter;
+
+    private void Awake()
+    {
+        aiDestinationSetter = GetComponent<AIDestinationSetter>();
+    }
 
     public void TakeDamage(float amount)
     {
@@ -16,7 +24,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public virtual void OnDeath()
+
+    protected virtual void OnDeath()
     {
         Destroy(gameObject);
     }
@@ -27,6 +36,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         {
             other.transform.TryGetComponent(out IDamageable damageable);
             damageable.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
