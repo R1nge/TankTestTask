@@ -1,33 +1,23 @@
 ﻿using Pathfinding;
 using UnityEngine;
-using UnityEngine.AI;
 
-public abstract class Enemy : MonoBehaviour, IDamageable
+public abstract class Enemy : MonoBehaviour
 {
-    public float health;
-    public float takenDamageMultiplier;
     public float speed;
     public float damage;
     public AIDestinationSetter aiDestinationSetter;
     public AIPath aiPath;
+    private Health _health;
 
     private void Awake()
     {
         aiDestinationSetter = GetComponent<AIDestinationSetter>();
         aiPath = GetComponent<AIPath>();
+        _health = GetComponent<Health>();
+        _health.OnDieEvent += OnDeath;
 
         aiPath.maxSpeed = speed;
     }
-
-    public void TakeDamage(float amount)
-    {
-        health -= amount * takenDamageMultiplier;
-        if (health <= 0)
-        {
-            OnDeath();
-        }
-    }
-
 
     protected virtual void OnDeath()
     {
@@ -38,8 +28,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.transform.TryGetComponent(out IDamageable damageable);
-            damageable.TakeDamage(damage);
+            other.transform.TryGetComponent(out Health health);
+            health.TakeDamage(damage);
             Destroy(gameObject);
         }
     }

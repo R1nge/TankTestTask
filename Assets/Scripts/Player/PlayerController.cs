@@ -1,35 +1,23 @@
-using System;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : MonoBehaviour
 {
     [Header("Weapons")]
     [SerializeField] private Weapon currentWeapon;
     [SerializeField] private Weapon[] weapons;
     private int _weaponIndex;
-
-    [Header("Tank Stats")]
-    [SerializeField] private int speed;
-    [SerializeField] private int rotationSpeed;
-    [SerializeField] private float health;
-    [SerializeField] private float takenDamageMultiplier;
     
-
     private void Start()
     {
         currentWeapon = weapons[0];
         currentWeapon.gameObject.SetActive(true);
-
-
     }
 
     private void Update()
     {
         Shoot();
         SwapWeapons();
-        Move();
-        Rotate();
     }
 
     private void Shoot()
@@ -58,42 +46,10 @@ public class PlayerController : MonoBehaviour, IDamageable
             currentWeapon.gameObject.SetActive(true);
         }
     }
-
-
-    private void Move()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += transform.up * speed * Time.deltaTime;
-        }
-    }
-
-    private void Rotate()
-    {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(new Vector3(0, 0, rotationSpeed * Time.deltaTime));
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(new Vector3(0, 0, -rotationSpeed * Time.deltaTime));
-        }
-    }
     
-
     private void Respawn()
     {
         Instantiate(gameObject, new Vector3(0, 0, 0), quaternion.identity);
         Destroy(gameObject);
-    }
-
-    public void TakeDamage(float amount)
-    {
-        health -= amount * takenDamageMultiplier;
-        if (health <= 0)
-        {
-            Respawn();
-        }
     }
 }

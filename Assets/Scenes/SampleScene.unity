@@ -1052,10 +1052,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1386550353}
   - component: {fileID: 1386550352}
-  - component: {fileID: 1386550354}
   - component: {fileID: 1386550355}
   - component: {fileID: 1386550356}
+  - component: {fileID: 1386550354}
   - component: {fileID: 1386550357}
+  - component: {fileID: 1386550360}
+  - component: {fileID: 1386550359}
+  - component: {fileID: 1386550358}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1146,10 +1149,6 @@ MonoBehaviour:
   weapons:
   - {fileID: 1704564903}
   - {fileID: 925094915}
-  speed: 5
-  rotationSpeed: 150
-  health: 10
-  takenDamageMultiplier: 1
 --- !u!61 &1386550355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1209,10 +1208,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365efcfdf43e13644bce5e677341303b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
+--- !u!114 &1386550358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386550351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb47a982151bb648b624a562c40501b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rotationSpeed: 100
+--- !u!114 &1386550359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386550351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e228445e74191b840863951d07366940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  takenDamageMultiplier: 1
+--- !u!114 &1386550360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386550351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e449aa20a01e71498d5bbda42c1148f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704564901
 GameObject:
   m_ObjectHideFlags: 0

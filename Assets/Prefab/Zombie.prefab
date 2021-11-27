@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4229271629835925643}
   - component: {fileID: 4229271629835925642}
-  - component: {fileID: 4229271629835925645}
   - component: {fileID: 4229271629835925640}
   - component: {fileID: 4229271629835925641}
   - component: {fileID: 2227878836015029319}
   - component: {fileID: 8870824436394996586}
   - component: {fileID: 5825184678438362961}
+  - component: {fileID: 4229271629835925645}
+  - component: {fileID: 1498835946482089155}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -88,24 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4229271629835925645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4229271629835925644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb79ac4c53421b44d834cf4fa700057c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  takenDamageMultiplier: 1
-  speed: 2
-  damage: 10
-  aiDestinationSetter: {fileID: 0}
-  aiPath: {fileID: 0}
 --- !u!61 &4229271629835925640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,3 +220,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &4229271629835925645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229271629835925644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb79ac4c53421b44d834cf4fa700057c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  damage: 10
+  aiDestinationSetter: {fileID: 0}
+  aiPath: {fileID: 0}
+--- !u!114 &1498835946482089155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229271629835925644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e228445e74191b840863951d07366940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  takenDamageMultiplier: 1

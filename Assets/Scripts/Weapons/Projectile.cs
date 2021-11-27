@@ -11,9 +11,9 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.TryGetComponent(out IDamageable damageable))
+        if (other.transform.TryGetComponent(out Health health))
         {
-            damageable.TakeDamage(damage);
+            health.TakeDamage(damage);
         }
 
         Destroy(gameObject);
