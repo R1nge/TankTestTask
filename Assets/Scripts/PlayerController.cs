@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -13,11 +14,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     [SerializeField] private int rotationSpeed;
     [SerializeField] private float health;
     [SerializeField] private float takenDamageMultiplier;
+    
 
     private void Start()
     {
         currentWeapon = weapons[0];
         currentWeapon.gameObject.SetActive(true);
+
+
     }
 
     private void Update()
@@ -26,7 +30,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         SwapWeapons();
         Move();
         Rotate();
-        CheckBorders();
     }
 
     private void Shoot()
@@ -77,18 +80,7 @@ public class PlayerController : MonoBehaviour, IDamageable
             transform.Rotate(new Vector3(0, 0, -rotationSpeed * Time.deltaTime));
         }
     }
-
-    private void CheckBorders()
-    {
-        Vector3 pos = transform.position;
-
-        if (pos.x > 7.85f) pos.x = 7.85f;
-        if (pos.x < -7.85f) pos.x = -7.85f;
-
-        if (pos.y > 4.5f) pos.y = 4.5f;
-        if (pos.y < -4.5f) pos.y = -4.5f;
-        transform.position = pos;
-    }
+    
 
     private void Respawn()
     {
