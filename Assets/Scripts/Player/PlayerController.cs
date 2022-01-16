@@ -1,5 +1,5 @@
-using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 	private Health _health;
@@ -7,17 +7,17 @@ public class PlayerController : MonoBehaviour
 	private void Awake ()
 	{
 		_health = GetComponent<Health>();
-		_health.OnDieEvent += Respawn;
+		_health.OnDieEvent += Restart;
 	}
 
-	private void Respawn ()
+	private void Restart ()
 	{
-		Instantiate(gameObject, new Vector3(0, 0, 0), quaternion.identity);
-		Destroy(gameObject);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
-	private void OnDestroy ()
+
+	private void OnDisable ()
 	{
-		_health.OnDieEvent -= Respawn;
+		_health.OnDieEvent -= Restart;
 	}
 }
