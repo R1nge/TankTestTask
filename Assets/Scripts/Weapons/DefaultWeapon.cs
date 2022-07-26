@@ -1,10 +1,15 @@
-public class DefaultWeapon : Weapon
+namespace Weapons
 {
-    public override void Shoot(int damage)
+    public class DefaultWeapon : Weapon
     {
-        var projectile = Instantiate(projectilePrefab, shootPoint.position, transform.rotation);
-        projectile.velocity = (transform.up * projectileSpeed);
-        projectile.transform.GetComponent<Projectile>().damage = damage;
-        print(damage);
+        public override void Shoot(int damage)
+        {
+            var projectile = Instantiate(projectilePrefab, shootPoint.position, transform.rotation);
+            projectile.velocity = transform.up * projectileSpeed;
+            if (projectile.transform.TryGetComponent(out Projectile proj))
+            {
+                proj.damage = damage;
+            }
+        }
     }
 }

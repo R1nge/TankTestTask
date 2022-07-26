@@ -8,15 +8,9 @@ public class Boundaries : MonoBehaviour
     private float _maxY;
     private Camera _camera;
 
-    private void Awake()
-    {
-        _camera = FindObjectOfType<Camera>();
-    }
+    private void Awake() => _camera = Camera.main;
 
-    private void Start()
-    {
-        GetScreenBoundaries();
-    }
+    private void Start() => GetScreenBoundaries();
 
     private void GetScreenBoundaries()
     {
@@ -30,10 +24,7 @@ public class Boundaries : MonoBehaviour
         _minY = height - _maxY * 2;
     }
 
-    private void LateUpdate()
-    {
-        CheckBorders();
-    }
+    private void LateUpdate() => CheckBorders();
 
     private void CheckBorders()
     {

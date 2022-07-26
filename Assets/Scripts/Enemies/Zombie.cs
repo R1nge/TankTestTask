@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class Zombie : Enemy
+namespace Enemies
 {
-    private void Start()
+    public class Zombie : Enemy
     {
-        aiDestinationSetter.target = GameObject.FindWithTag("Player").transform;
+        private void Start() => aiDestinationSetter.target = GameObject.FindWithTag("Player").transform;
     }
 }

@@ -1,17 +1,23 @@
 using UnityEngine;
 
-public class DoubleWeapon : Weapon
+namespace Weapons
 {
-    public override void Shoot(int damage)
+    public class DoubleWeapon : Weapon
     {
-        for (int i = 0; i < 2; i++)
+        public override void Shoot(int damage)
         {
-            var projectile = Instantiate(
-                projectilePrefab,
-                shootPoint.position + new Vector3(i * .1f, i * .1f),
-                transform.rotation);
-            projectile.velocity = (transform.up * projectileSpeed);
-            projectile.transform.GetComponent<Projectile>().damage = damage;
+            for (int i = 0; i < 2; i++)
+            {
+                var projectile = Instantiate(
+                    projectilePrefab,
+                    shootPoint.position + new Vector3(i * .1f, i * .1f),
+                    transform.rotation);
+                projectile.velocity = (transform.up * projectileSpeed);
+                if (projectile.transform.TryGetComponent(out Projectile proj))
+                {
+                    proj.damage = damage;
+                }
+            }
         }
     }
 }

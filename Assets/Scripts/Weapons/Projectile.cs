@@ -1,21 +1,21 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+namespace Weapons
 {
-    [HideInInspector] public int damage;
-
-    private void OnBecameInvisible()
+    public class Projectile : MonoBehaviour
     {
-        Destroy(gameObject);
-    }
+        [HideInInspector] public int damage;
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.transform.TryGetComponent(out Health health))
+        private void OnBecameInvisible() => Destroy(gameObject);
+
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            health.TakeDamage(damage);
-        }
+            if (other.transform.TryGetComponent(out Health health))
+            {
+                health.TakeDamage(damage);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

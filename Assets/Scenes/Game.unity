@@ -187,8 +187,7 @@ MonoBehaviour:
   - {fileID: 4229271629835925645, guid: 5b0d294c1fca35e40922ce6cac81f5a1, type: 3}
   spawnInterval: 2.5
   targetSpawnAmount: 10
-  minDistance: 15
-  maxDistance: 25
+  maxSpawnDistance: 4
 --- !u!4 &333978574
 Transform:
   m_ObjectHideFlags: 0
@@ -546,7 +545,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 20
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -1187,10 +1186,10 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!114 &1386550357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,8 +1214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb47a982151bb648b624a562c40501b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  rotationSpeed: 100
+  speed: 10
+  rotationSpeed: 10
 --- !u!114 &1386550359
 MonoBehaviour:
   m_ObjectHideFlags: 0
