@@ -149,6 +149,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 925094914}
   m_RootOrder: 0
@@ -198,6 +199,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.92946875, y: 0.03036261, z: -0.43004724}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -257,6 +259,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -307,6 +310,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.2017617, y: 0.32353514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957117713}
   m_RootOrder: 1
@@ -341,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -373,6 +378,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -408,7 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAYIexCYfaUbwIAACcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMFy2jAQ/RVG55IxxE6ht9YhpIckTGknF18UaY01yJJHkgMkw793JcvYpb4g3u5bvX279icRyjbAnDZrI/iT5kC+TYg/ky+TIfgIR7rTais+oM95FdxVPomGnF/UCY34zNOsrsEZwb6rnfTJCYKtEqU29YrvINfWWYRLKi1gyGjn2Qqhzwk54s906SknPM2/+tMHnpbJ5IxHBsqBGVKTm6V/FrNImM5ukvDc3kXiNAvEVjFJ6wa472LgZ8tITJchTWF/McOXZFpKYaM44k5NaD6njW2xNUzggmKzQdHsJs0QqUDsKue1j/kvZWnBRTMMPd0Lg7Z1hckP3XlZU7vvpL1T2fqr7tKgqqv59F94Ogvh0uj6sb92lvgrXCXY/hc9MWrdyOsxfD+SHgw6ULmnbxJeK1DPem10qzgGnWk9tbUwvx/+XjrLK2D7Ae+kXoFtM5pYNLwfrO/hHJo/5lLUb2GoaQdspQ6Oh30Ag7P5iYLDtthYAlGv4o+F33Q3XqsYeBDGOgzFLpWX96Zb41PJKnjmu2ldro2CAEfRDSgq3WmDZdz1BK9io2uvIg/Uv0Dx8hjr34srSoCH/CS5Cm304TIsW+nDE9jqpXVSKBhE+8Az+pRrpboFG3vS07atKSkb0Xat4P+uFpknlNG7xRwYWy6y28U0S0u2SCG5nacZh3lGwu4JhX1SuemERntwamoornDP+u/KZG1oE5adG3pYi49ajywXqtRbZgDUS1fhIhwMXoLvJV9xgQZtwTmhwrzJZ0GkZnvgxaVQETpdHZ2hxVClII14184jBcnDh6QgHr7s8sbAu4CDv7wvdibnv1BLAwQUAAAICAAAGCHsNZ3G2W0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0kpFBYnKimYVRanKypYWpsYWuqUlasoVJqoGxkYlpSqqRqVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAGCHsQmH2lG8CAAAnBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAGCHsNZ3G2W0AAAB4AAAACQAkAAAAAAAAAAAAAAC8AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHQDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAYIeydCXQtbgIAACYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMFy2jAQ/RVG58IYAgR6ax1CekjChHZy8UVIa6xBljySHCAZ/r0rWcYu9QXxdt/q7du1v4hQtgLmtFkbwZ81B/J9QPyZfBt0wSc40b1WW/EJbc674K7wSTTkvFEnNOJjT7O6BGcE+6H20icnCNZK5NqUK76HVFtnEc6ptIAho51nK4S+BuSEP8Olp5zxNLn3p088LZPBBY8MlAPTpSajpX8W40gYjkdJeO7mkTicBWKtmKRlBdx30fFny0icLkOawv5ihi/JtJTCRnHEnavQfEorW2NrmMAFxWaDovHoHoECxL5wXnqf/prnFlz0wtDzgzDoWlOX/NSNlSW1h0bZB5W1v2k+DaKams//hYfjEM6NLp/aa8eJv8IVgh3e6JlR63pW9+GHnvLgz5HKA91JeC9Avei10bXiGHSm9tTawuSh+3vtLC2AHTq8kXoD1lVvYNHvdq6+h0to/pRKUe7CTKcNsJU6GB7WAQyO5hcKDstiYwlEvYo/Fn7TfX+rYuBRGOswFLtUXt5O18anklXwzHdTu1QbBQGOoitQVLrzBsu42wnexHrX3kQeqX9/4uUx1r4WN5QAd/lJchPa6ON1WLbQx2ewxWvtpFDQifaBF/Qp1Uo1C9b3pKVta5NT1qPta8H/XS0ySSij88UEGFsuZneL4Wyas8UUkrvJdMZhMiNh94TCPqncNEKjPTg11RVXuGftZ2WwNrQKy84NPa7FZ6l7lguV6y0zAOq1qXAVDgYvwdeSr7hAg7bgnFBh3uQrI1KzA/DsWigLna5OztCsq5KRSnxo55GMpOE7khEPX3d5Y+BDwNFf3ha7kMtfUEsDBBQAAAgIAAAYIew1ncbZbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSkUFicqKZhVFqcrKlhamxha6pSVqyhUmqgbGRiWlKqpGpUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAYIeydCXQtbgIAACYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAYIew1ncbZbQAAAHgAAAAJACQAAAAAAAAAAAAAALsCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -491,6 +497,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -574,6 +581,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -633,6 +641,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -683,6 +692,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.2017617, y: -3.0164647, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957117713}
   m_RootOrder: 2
@@ -715,6 +725,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 163315006}
   m_Father: {fileID: 1386550353}
@@ -747,6 +758,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -811,8 +823,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957117712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29823825, y: 0.6564649, z: -0.632812}
+  m_LocalPosition: {x: 0.29823825, y: 0.6564649, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1197599777}
   - {fileID: 369167294}
@@ -876,6 +889,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -926,6 +940,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.2982383, y: 0.32353514, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957117713}
   m_RootOrder: 0
@@ -985,6 +1000,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1035,6 +1051,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.4082382, y: -3.0164647, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957117713}
   m_RootOrder: 3
@@ -1075,6 +1092,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1125,6 +1143,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1704564902}
   - {fileID: 925094914}
@@ -1286,6 +1305,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1788669934}
   m_Father: {fileID: 1386550353}
@@ -1318,6 +1338,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1384,6 +1405,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1704564902}
   m_RootOrder: 0

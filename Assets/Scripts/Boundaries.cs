@@ -16,8 +16,7 @@ public class Boundaries : MonoBehaviour
     {
         var height = _camera.orthographicSize;
         var width = height * Screen.width / Screen.height;
-
-        // Calculations assume map is position at the origin
+        
         _maxX = width;
         _minX = width - _maxX * 2;
         _maxY = height;
