@@ -1,11 +1,9 @@
-using System.Collections;
 using Enemies;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy[] objectsToSpawn;
-    [SerializeField] private float spawnInterval;
     [SerializeField] private int targetSpawnAmount;
     [SerializeField] private float maxSpawnDistance;
     private int _spawnedAmount;
@@ -13,21 +11,25 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake() => _camera = Camera.main;
 
-    private void Start() => StartCoroutine(Spawn_c());
-
-    private IEnumerator Spawn_c()
+    private void Start()
     {
-        while (enabled)
+        for (int i = 0; i < targetSpawnAmount; i++)
         {
-            _spawnedAmount = FindObjectsOfType<Enemy>().Length;
-            if (_spawnedAmount < targetSpawnAmount)
-            {
-                Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], GetSpawnPosition(),
-                    Quaternion.identity);
-            }
-
-            yield return new WaitForSeconds(spawnInterval);
+            Spawn();
         }
+    }
+
+    private void Spawn()
+    {
+        var inst = Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], GetSpawnPosition(),
+            Quaternion.identity);
+        inst.OnEnemyDiedEvent += OnEnemyDied;
+    }
+
+    private void OnEnemyDied(Enemy enemy)
+    {
+        Spawn();
+        enemy.OnEnemyDiedEvent -= OnEnemyDied;
     }
 
     private Vector3 GetSpawnPosition()

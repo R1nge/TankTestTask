@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float takenDamageMultiplier;
     public event Action OnDieEvent;
 
-    private void Start() => health = maxHealth;
+    private void Awake() => health = maxHealth;
 
     public void TakeDamage(float amount)
     {

@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 333978574}
   - component: {fileID: 333978573}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,7 +186,6 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 4229271629835925645, guid: e1afe6835f370074da76bf3e51072261, type: 3}
   - {fileID: 4229271629835925645, guid: 5b0d294c1fca35e40922ce6cac81f5a1, type: 3}
-  spawnInterval: 2.5
   targetSpawnAmount: 10
   maxSpawnDistance: 4
 --- !u!4 &333978574
@@ -197,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333978572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92946875, y: 0.03036261, z: -0.43004724}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

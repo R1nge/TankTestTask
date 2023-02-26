@@ -1,4 +1,5 @@
-﻿using Pathfinding;
+﻿using System;
+using Pathfinding;
 using UnityEngine;
 
 namespace Enemies
@@ -11,6 +12,8 @@ namespace Enemies
         private AIPath aiPath;
         private Health _health;
 
+        public event Action<Enemy> OnEnemyDiedEvent;
+
         private void Awake()
         {
             aiDestinationSetter = GetComponent<AIDestinationSetter>();
@@ -20,7 +23,11 @@ namespace Enemies
             aiPath.maxSpeed = speed;
         }
 
-        private void OnDeath() => Destroy(gameObject);
+        private void OnDeath()
+        {
+            OnEnemyDiedEvent?.Invoke(this);
+            Destroy(gameObject);
+        }
 
         private void OnCollisionStay2D(Collision2D other)
         {
