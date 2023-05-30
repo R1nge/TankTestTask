@@ -8,11 +8,11 @@ namespace Weapons
         [SerializeField] private Weapon[] weapons;
         private Weapon _currentWeapon;
         private int _weaponIndex;
-        private PlayerInput _playerInput;
+        private IPlayerInput _playerInput;
 
         private void Awake()
         {
-            _playerInput = GetComponent<PlayerInput>();
+            _playerInput = GetComponent<IPlayerInput>();
             _playerInput.ShootEvent += Shoot;
             _playerInput.SwapWeaponEvent += SwapWeapons;
         }

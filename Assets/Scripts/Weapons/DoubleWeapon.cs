@@ -13,7 +13,7 @@ namespace Weapons
                     shootPoint.position + new Vector3(i * .1f, i * .1f),
                     transform.rotation);
                 projectile.velocity = (transform.up * projectileSpeed);
-                if (projectile.transform.TryGetComponent(out Projectile proj))
+                if (projectile.TryGetComponent(out Projectile proj))
                 {
                     proj.damage = damage;
                 }

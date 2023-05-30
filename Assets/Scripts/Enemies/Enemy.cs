@@ -1,6 +1,8 @@
 ﻿using System;
 using Pathfinding;
+using Player;
 using UnityEngine;
+using VContainer;
 
 namespace Enemies
 {
@@ -8,20 +10,29 @@ namespace Enemies
     {
         [SerializeField] private float speed;
         [SerializeField] private float damage;
-        public AIDestinationSetter aiDestinationSetter;
-        private AIPath aiPath;
+        [SerializeField] protected AIDestinationSetter aiDestinationSetter;
+        private AIPath _aiPath;
         private Health _health;
+        private Transform _playerTransform;
 
         public event Action<Enemy> OnEnemyDiedEvent;
+
+        [Inject]
+        private void Construct(PlayerController player)
+        {
+            _playerTransform = player.transform;
+        }
 
         private void Awake()
         {
             aiDestinationSetter = GetComponent<AIDestinationSetter>();
-            aiPath = GetComponent<AIPath>();
+            _aiPath = GetComponent<AIPath>();
             _health = GetComponent<Health>();
             _health.OnDieEvent += OnDeath;
-            aiPath.maxSpeed = speed;
+            _aiPath.maxSpeed = speed;
         }
+
+        private void Start() => aiDestinationSetter.target = _playerTransform;
 
         private void OnDeath()
         {
@@ -31,10 +42,12 @@ namespace Enemies
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            if (!other.gameObject.CompareTag("Player")) return;
-            if (other.transform.TryGetComponent(out Health health))
+            if (other.gameObject.TryGetComponent(out PlayerController player))
             {
-                health.TakeDamage(damage);
+                if (player.TryGetComponent(out Health health))
+                {
+                    health.TakeDamage(damage);
+                }
             }
         }
 

@@ -1,5 +1,7 @@
 using Enemies;
 using UnityEngine;
+using VContainer;
+using VContainer.Unity;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -8,6 +10,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float maxSpawnDistance;
     private int _spawnedAmount;
     private Camera _camera;
+    private IObjectResolver _objectResolver;
+
+    [Inject]
+    private void Construct(IObjectResolver objectResolver)
+    {
+        _objectResolver = objectResolver;
+    }
 
     private void Awake() => _camera = Camera.main;
 
@@ -21,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        var inst = Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], GetSpawnPosition(),
+        var inst = _objectResolver.Instantiate(objectsToSpawn[Random.Range(0, objectsToSpawn.Length)], GetSpawnPosition(),
             Quaternion.identity);
         inst.OnEnemyDiedEvent += OnEnemyDied;
     }
@@ -38,9 +47,9 @@ public class EnemySpawner : MonoBehaviour
             Random.Range(-maxSpawnDistance, maxSpawnDistance),
             Random.Range(-maxSpawnDistance, maxSpawnDistance),
             10);
-        while (pos.x >= 0 && pos.x <= 1 || pos.y >= 0 && pos.y <= 1)
+        while (pos.x is >= 0 and <= 1 || pos.y is >= 0 and <= 1)
         {
-            pos = new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 10);
+            pos = new(Random.Range(-4, 4), Random.Range(-4, 4), 10);
         }
 
         pos = _camera.ViewportToWorldPoint(pos);

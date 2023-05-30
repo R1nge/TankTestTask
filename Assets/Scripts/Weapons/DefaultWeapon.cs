@@ -6,7 +6,7 @@ namespace Weapons
         {
             var projectile = Instantiate(projectilePrefab, shootPoint.position, transform.rotation);
             projectile.velocity = transform.up * projectileSpeed;
-            if (projectile.transform.TryGetComponent(out Projectile proj))
+            if (projectile.TryGetComponent(out Projectile proj))
             {
                 proj.damage = damage;
             }

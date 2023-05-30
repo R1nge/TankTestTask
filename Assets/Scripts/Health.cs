@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] private float health, maxHealth;
     [SerializeField] private float takenDamageMultiplier;
